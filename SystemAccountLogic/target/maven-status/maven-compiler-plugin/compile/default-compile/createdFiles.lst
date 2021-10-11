@@ -1,0 +1,11 @@
+com\wendy\logic\MilesService.class
+com\wendy\logic\PersonService.class
+com\wendy\logic\RewardsService.class
+com\wendy\logic\PersonTransactionsService.class
+com\wendy\logic\config\BuslogicConfig.class
+com\wendy\logic\impl\RewardsServiceImpl.class
+com\wendy\logic\impl\TypeAccountsServiceImpl.class
+com\wendy\logic\impl\MilesServiceImpl.class
+com\wendy\logic\impl\PersonServiceImpl.class
+com\wendy\logic\impl\PersonTransactionsServiceImpl.class
+com\wendy\logic\TypeAccountService.class

@@ -1,0 +1,11 @@
+com\wendy\domain\dtos\TypeAccountDTO.class
+com\wendy\domain\persistence\PersonTransactions.class
+com\wendy\domain\persistence\TypeAccount.class
+com\wendy\domain\dtos\MilesDto.class
+com\wendy\domain\persistence\Person.class
+com\wendy\domain\persistence\Miles.class
+com\wendy\domain\dtos\PersonDto.class
+com\wendy\domain\persistence\Rewards.class
+com\wendy\domain\dtos\RewardsDTO.class
+com\wendy\domain\dtos\PersonTransactionsDTO.class
+com\wendy\domain\service\GetResponse.class

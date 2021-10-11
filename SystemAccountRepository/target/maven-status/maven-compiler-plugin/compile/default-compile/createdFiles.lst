@@ -1,0 +1,6 @@
+com\wendy\repository\persistence\PersonTransactionsRepo.class
+com\wendy\repository\persistence\MilesRepo.class
+com\wendy\repository\config\repositoryConfiguration.class
+com\wendy\repository\persistence\RewardsRepo.class
+com\wendy\repository\persistence\PersonRepo.class
+com\wendy\repository\persistence\TypeAccountRepo.class

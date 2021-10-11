@@ -1,0 +1,13 @@
+com\wendy\webservices\config\webconfig.class
+com\wendy\webservices\controllers\PersonTransactionsController.class
+com\wendy\webservices\config\SwaggerConfiguration.class
+com\wendy\webservices\controllers\MilesController.class
+com\wendy\webservices\controllers\PersonController.class
+com\wendy\webservices\controllers\TypesAccountController.class
+com\wendy\webservices\project.class
+com\wendy\webservices\controller\MilesController.class
+com\wendy\webservices\controller\PersonTransactionsController.class
+com\wendy\webservices\controller\AccountTypesController.class
+com\wendy\webservices\controllers\RewardsController.class
+com\wendy\webservices\controller\RewardsController.class
+com\wendy\webservices\controller\PersonController.class

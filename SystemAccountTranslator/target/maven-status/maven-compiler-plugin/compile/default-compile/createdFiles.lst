@@ -1,0 +1,11 @@
+com\wendy\translators\impl\TypeAccountsTranslatorImpl.class
+com\wendy\translators\PersonTransactionsTranslator.class
+com\wendy\translators\RewardsTranslator.class
+com\wendy\translators\impl\PersonTransactionsTranslatorImpl.class
+com\wendy\translators\impl\RewardsTranslatorImpl.class
+com\wendy\translators\impl\MilesTranslatorImpl.class
+com\wendy\translators\impl\PersonTranslatorImpl.class
+com\wendy\translators\MilesTranslator.class
+com\wendy\translators\PersonTranslator.class
+com\wendy\translators\TypeAccountsTranslator.class
+com\wendy\translators\config\TranslatorConfigure.class
