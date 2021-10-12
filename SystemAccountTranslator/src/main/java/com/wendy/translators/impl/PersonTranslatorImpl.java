@@ -65,11 +65,18 @@ public class PersonTranslatorImpl implements PersonTranslator {
 
     @Override
     public PersonDto addMember(PersonDto personDto) {
-        Person person;
+        Person person = new Person();
         try {
-            person = personDto.buildPerson(personDto);
-            Person save = personRepo.save(person);
-            //milesRepo.save(save.getMiles());
+            person.setId(null);
+            person.setName(personDto.getName());
+            person.setSurname(personDto.getSurname());
+            person.setAge(personDto.getAge());
+            person.setEmail(personDto.getEmail());
+            person.setPhonenumber(person.getPhonenumber());
+            //personDto.setMilesDto(personDto.getMilesDto());
+
+            personRepo.save(person);
+
         }catch (Exception e){
             throw new RuntimeException("Cannot add the member",e);
         }

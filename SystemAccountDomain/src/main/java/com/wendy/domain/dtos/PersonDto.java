@@ -37,17 +37,14 @@ public class PersonDto implements Serializable {
         this.name = person.getName();
         this.surname = person.getSurname();
         this.email = person.getEmail();
-        this.phonenumber = person.getPhonenumber();;
+        this.phonenumber = person.getPhonenumber();
         this.age = person.getAge();
         if(null != person.getMiles()){
             this.milesDto = new MilesDto(person.getMiles());
         }
     }
 
-    @JsonIgnore
-    public Person buildPerson(PersonDto personDto){
-        return new Person(null,this.getName(),this.getSurname(),this.getEmail(),this.getPhonenumber(),this.getAge());
-    }
+
 
     public String getName() {
         return name;

@@ -21,8 +21,8 @@ public class MilesDto implements Serializable {
         this.driving = personDto.getDriving();
     }
 
-    public Miles buildMiles(PersonDto personDto){
-        return new Miles(null,this.getNumOfMiles(),this.getSpending(),this.getHealthandsafety(),this.getDriving(),personDto.buildPerson(personDto));
+    public Miles buildMiles(Person personDto){
+        return new Miles(null,this.getNumOfMiles(),this.getSpending(),this.getHealthandsafety(),this.getDriving(),personDto);
     }
 
     public MilesDto(int numOfMiles, int spending, int healthandsafety, int driving, Person person) {

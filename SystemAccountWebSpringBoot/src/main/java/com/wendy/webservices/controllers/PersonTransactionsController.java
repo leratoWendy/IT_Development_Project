@@ -1,6 +1,10 @@
 package com.wendy.webservices.controllers;
 
+import com.wendy.domain.dtos.PersonDto;
 import com.wendy.domain.dtos.PersonTransactionsDTO;
+import com.wendy.domain.dtos.TypeAccountDTO;
+import com.wendy.domain.persistence.Person;
+import com.wendy.domain.persistence.TypeAccount;
 import com.wendy.domain.service.GetResponse;
 import com.wendy.logic.PersonService;
 import com.wendy.logic.PersonTransactionsService;
@@ -56,10 +60,30 @@ public class PersonTransactionsController {
             @ApiResponse(code=500,message="Internal Server error")
     })
     public ResponseEntity<GetResponse<PersonTransactionsDTO>> addMember(
-            @ApiParam(value = "Request Body for the new Member",
+            @ApiParam(value = "Request account type",
+                    example = "miles",
                     required = true)
-            @RequestBody PersonTransactionsDTO personDto){
-        PersonTransactionsDTO member = personTransactionsService.addTransaction(personDto);
+            @RequestParam String type,
+            @ApiParam(value = "Transaction name",
+                    example = "Buy coffee",
+                    required = true)
+            @RequestParam String name,
+            @ApiParam(value = "Member Email",
+                    example = "wendy@gmail.com",
+                    required = true)
+            @RequestParam String email,
+            @ApiParam(value = "Amount",
+                    example = "15",
+                    required = true)
+            @RequestParam double amount,
+            @ApiParam(value = "Transaction type",
+                    example = "add or sub",
+                    required = true)
+            @RequestParam String transtype){
+        PersonDto person = personService.getMember(email);
+        TypeAccountDTO typeAccount = typeAccountService.getTypeAccount(type);
+        PersonTransactionsDTO newTrans = new PersonTransactionsDTO(typeAccount,person,amount,transtype);
+        PersonTransactionsDTO member = personTransactionsService.addTransaction(newTrans);
         GetResponse<PersonTransactionsDTO> response = new GetResponse<>(true,member);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

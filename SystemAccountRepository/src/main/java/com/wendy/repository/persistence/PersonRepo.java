@@ -12,9 +12,11 @@ import javax.transaction.Transactional;
 
 @Repository
 public interface PersonRepo extends JpaRepository<Person, Long>{
-    @Transactional
-    @Modifying
+
     @Query(value = "select * from persons where persons.email=:email",nativeQuery = true)
     Person getUserByEmail(String email);
+
+
+
 }
 

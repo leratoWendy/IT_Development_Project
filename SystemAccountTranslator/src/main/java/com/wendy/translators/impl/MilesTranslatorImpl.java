@@ -61,7 +61,7 @@ public class MilesTranslatorImpl implements MilesTranslator {
         Miles membermiles;
         try {
             Person person = personRepo.getUserByEmail(milesDto.getEmail());
-            membermiles = miles.buildMiles(new PersonDto(person));
+            membermiles = miles.buildMiles(person);
             milesRepo.save(membermiles);
         }catch (Exception e){
             throw new RuntimeException("Cannot add The miles",e);
@@ -73,10 +73,11 @@ public class MilesTranslatorImpl implements MilesTranslator {
     public MilesDto deleteMiles(String email) {
         Miles miles;
         try {
-            miles = milesRepo.deleteMilesForUser(email);
+            miles = milesRepo.getMemberMiles(email);
+            milesRepo.deleteMilesForUser(email);
         }catch (Exception e){
             throw new RuntimeException("Cannot add The miles",e);
         }
-        return null;
+        return new MilesDto(miles);
     }
 }

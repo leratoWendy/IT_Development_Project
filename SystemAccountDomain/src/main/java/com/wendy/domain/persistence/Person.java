@@ -20,13 +20,14 @@ public class Person implements Serializable {
     public Person() {
     }
 
-    public Person(Long id, String name, String surname, String email, String phonenumber, int age) {
+    public Person(Long id, String name, String surname, String email, String phonenumber, int age,Miles miles) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.phonenumber = phonenumber;
         this.age = age;
+        this.miles = miles;
     }
 
     public Person(Long id, String name, String surname, String email, String phonenumber, int age, Miles miles, Set<PersonTransactions> personTransactionsSet) {

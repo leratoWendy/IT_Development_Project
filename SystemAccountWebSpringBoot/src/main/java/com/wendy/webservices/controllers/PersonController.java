@@ -93,6 +93,8 @@ public class PersonController {
             @RequestBody PersonDto personDto){
         PersonDto member = personService.addMember(personDto);
         milesService.addMiles(personDto);
+
+
         GetResponse<PersonDto> response = new GetResponse<>(true,member);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

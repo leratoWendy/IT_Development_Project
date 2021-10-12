@@ -12,8 +12,7 @@ import javax.transaction.Transactional;
 
 @Repository
 public interface TypeAccountRepo extends JpaRepository<TypeAccount, Long> {
-    @Transactional
-    @Modifying
+
     @Query(value = "select * from account_types where nmonic=:nmonic",nativeQuery = true)
     TypeAccount getAccountType(@Param("nmonic") String nmonic);
 

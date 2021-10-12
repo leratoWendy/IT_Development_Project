@@ -1,6 +1,7 @@
 package com.wendy.repository.persistence;
 
 import com.wendy.domain.persistence.Miles;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -13,12 +14,15 @@ import javax.transaction.Transactional;
 public interface MilesRepo extends JpaRepository<Miles, Long> {
     @Transactional
     @Modifying
-    @Query(value = "delete from miles join persons on miles.person_id=person.person_id where persons.email=:email",nativeQuery = true)
-    Miles deleteMilesForUser(@Param("email") String email);
+    @Query(value = "delete from miles join persons on miles.person_id=persons.person_id where persons.email=:email",nativeQuery = true)
+    void deleteMilesForUser(@Param("email") String email);
 
+    @Query(value = "select * from miles join persons on miles.person_id=persons.person_id where persons.email=:email",nativeQuery = true)
+    Miles getMemberMiles(String email);
 
     @Transactional
     @Modifying
-    @Query(value = "select * from miles join persons on miles.person_id=person.person_id where persons.email=:email",nativeQuery = true)
-    Miles getMemberMiles(String email);
+    @Query(value = "update miles set miles=:amount where miles.person_id in(" +
+            "select person_id from persons where email=:email)",nativeQuery = true)
+    void updateMyAmount(@Param("email") String email,@Param("amount") int cur_amount);
 }
